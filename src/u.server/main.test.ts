@@ -1,5 +1,5 @@
-import { expect, describe, it } from 'vitest';
-import { A, Repo } from '../common';
+import { describe, expect, it } from 'vitest';
+import { Repo } from '../common';
 
 export type TDoc = { count: number; text?: string };
 
