@@ -1,1 +1,2 @@
-export { next as A } from '@automerge/automerge';
+export * as A from '@automerge/automerge/next';
+export { Repo } from '@automerge/automerge-repo';

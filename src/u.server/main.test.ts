@@ -1,8 +1,13 @@
-import { expect, test } from 'vitest';
-import { sum } from './main.ts';
+import { expect, describe, it } from 'vitest';
+import { A, Repo } from '../common';
 
-export type TDoc = { count: number; msg?: string };
+export type TDoc = { count: number; text?: string };
 
-test('simple automerge setup', () => {
-  expect(sum(1, 2)).toBe(3);
+describe('Automerge basics', () => {
+  it('simple document', () => {
+    const repo = new Repo({ network: [] });
+    const doc = repo.create<TDoc>();
+    doc.change((d) => (d.count = 123));
+    expect(doc.docSync()?.count).to.eql(123);
+  });
 });
